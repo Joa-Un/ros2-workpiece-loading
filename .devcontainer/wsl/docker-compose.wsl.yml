@@ -1,0 +1,27 @@
+services:
+  workpiece_loading:
+    build:
+      context: ../..
+      dockerfile: .devcontainer/Dockerfile
+    image: workpiece_loading:humble
+    container_name: workpiece_loading
+    stdin_open: true
+    tty: true
+    network_mode: host
+    group_add:
+      - audio
+    devices:
+      - /dev/dxg
+    environment:
+      - DISPLAY=${DISPLAY}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+      - PULSE_SERVER=${PULSE_SERVER}
+      - QT_X11_NO_MITSHM=1
+      - IGN_IP=127.0.0.1
+      - LD_LIBRARY_PATH=/usr/lib/wsl/lib
+    volumes:
+      - ../../:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+      - /usr/lib/wsl:/usr/lib/wsl

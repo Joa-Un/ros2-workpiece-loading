@@ -1,0 +1,24 @@
+
+{
+  "name": "workpiece_loading_devcontainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workpiece_loading",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "ros",
+  "containerUser": "ros",
+  "containerEnv": {
+    "SHELL": "/bin/bash",
+    "DISPLAY": "${localEnv:DISPLAY}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "redhat.vscode-xml",
+        "Ranch-Hand-Robotics.rde-ros-2"
+      ]
+    }
+  }
+}

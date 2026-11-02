@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/Obstacle.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+
+module custom_msgs {
+  module msg {
+    typedef double double__3[3];
+    module Obstacle_Constants {
+      const uint8 SPHERE = 0;
+      const uint8 BOX = 1;
+    };
+    struct Obstacle {
+      string name;
+
+      uint8 shape_type;
+
+      geometry_msgs::msg::Point position;
+
+      geometry_msgs::msg::Quaternion orientation;
+
+      double radius;
+
+      double__3 box_size;
+    };
+  };
+};

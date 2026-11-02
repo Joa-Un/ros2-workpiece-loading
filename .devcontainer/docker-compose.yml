@@ -1,0 +1,36 @@
+services:
+  workpiece_loading:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    image: workpiece_loading:humble
+    container_name: workpiece_loading
+
+    stdin_open: true
+    tty: true
+    network_mode: host
+
+    group_add:
+      - audio
+
+    devices:
+      - /dev/snd
+      - /dev/dri:/dev/dri
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native
+      - IGN_IP=127.0.0.1
+
+    volumes:
+      # Mount the entire repository as the ROS 2 workspace
+      - ../:/workspace
+
+      # X11 for Gazebo and RViz
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+      # PulseAudio
+      - ${XDG_RUNTIME_DIR}/pulse:${XDG_RUNTIME_DIR}/pulse
+      - ~/.config/pulse/cookie:/home/ros/.config/pulse/cookie:ro
