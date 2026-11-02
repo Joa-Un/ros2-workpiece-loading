@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<library path="workpiece_control">
+  <class name="workpiece_control/GCPDController"
+         type="workpiece_control::GCPDController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Go-to-pose gravity compensated PD controller.
+    </description>
+  </class>
+  <class name="workpiece_control/JointVelocityController"
+         type="workpiece_control::JointVelocityController"
+         base_class_type="controller_interface::ChainableControllerInterface">
+    <description>
+      Low-level joint velocity controller. Takes desired velocity and converts it
+      into torque command.
+    </description>
+  </class>
+  <class name="workpiece_control/JointSpaceKinematicController"
+         type="workpiece_control::JointSpaceKinematicController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Kinematic controller in joint space. Sends velocity command for low-level
+      joint velocity controller.
+    </description>
+  </class>
+  <class name="workpiece_control/TaskSpaceKinematicController"
+         type="workpiece_control::TaskSpaceKinematicController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+      TODO
+    </description>
+  </class>
+</library>
