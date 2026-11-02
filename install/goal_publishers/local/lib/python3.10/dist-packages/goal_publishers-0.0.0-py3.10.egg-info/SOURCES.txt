@@ -1,6 +1,0 @@
-setup.py
-goal_publishers/__init__.py
-goal_publishers.egg-info/PKG-INFO
-goal_publishers.egg-info/SOURCES.txt
-goal_publishers.egg-info/dependency_links.txt
-goal_publishers.egg-info/top_level.txt

@@ -1,5 +1,13 @@
-**/build
-**/log
-
-.vscode
+# ROS2 / Colcon
+/build/
+/log/
+/install/
 .clang-format
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# IDE
+.vscode/
