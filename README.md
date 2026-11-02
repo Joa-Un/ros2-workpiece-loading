@@ -129,3 +129,10 @@ exit
 ```
 
 To stop the container, run `docker compose down` with the same Compose file arguments used to start it.
+
+
+## Acknowledgements
+
+This project builds upon ROS 2 simulation templates, controller implementations, and utility scripts originally developed by Juuso Järvenpää, teaching assistant for the Advanced Robotics course at Tampere University.
+
+These materials provided the foundation for the simulation environment and robot control architecture. The code has been adapted and extended for the autonomous workpiece loading and alignment application.
